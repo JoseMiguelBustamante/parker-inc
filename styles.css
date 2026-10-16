@@ -1,12 +1,63 @@
 :root {
   --ink: #101820;
+  --white: #ffffff;
   --muted: #5c6770;
   --line: #e4e8ea;
   --slate: #a8b0b8;
   --paper: #f6f7f8;
-  --white: #ffffff;
+  --canvas: var(--white);
+  --text: var(--ink);
+  --header: rgb(255 255 255 / 0.94);
+  --button-bg: var(--ink);
+  --button-fg: var(--white);
+  --button-border: var(--ink);
+  --button-hover: #243140;
+  --ghost-bg: var(--white);
+  --ghost-fg: var(--ink);
+  --ghost-border: var(--ink);
+  --ghost-hover: var(--paper);
+  --focus: var(--ink);
+  --card-wash: linear-gradient(160deg, rgb(255 255 255 / 0.2), rgb(255 255 255 / 0.92));
+  --form-bg: var(--ink);
+  --form-fg: var(--white);
+  --form-muted: #d5dbe0;
+  --field-border: rgb(255 255 255 / 0.28);
+  --field-fg: var(--white);
+  --form-button-bg: var(--white);
+  --form-button-fg: var(--ink);
+  --form-button-hover: #e7ebef;
   --font: "Hanken Grotesk", "Avenir Next", "Segoe UI", sans-serif;
   --wrap: 1120px;
+  color-scheme: light;
+}
+
+html[data-theme="dark"] {
+  --muted: #c5d0d8;
+  --line: rgb(255 255 255 / 0.18);
+  --slate: #b7c2cc;
+  --paper: #1a242e;
+  --canvas: var(--ink);
+  --text: #f4f6f8;
+  --header: rgb(16 24 32 / 0.94);
+  --button-bg: var(--white);
+  --button-fg: var(--ink);
+  --button-border: var(--white);
+  --button-hover: #e7ebef;
+  --ghost-bg: transparent;
+  --ghost-fg: var(--white);
+  --ghost-border: var(--white);
+  --ghost-hover: #1c2834;
+  --focus: var(--white);
+  --card-wash: linear-gradient(160deg, rgb(16 24 32 / 0.15), rgb(16 24 32 / 0.9));
+  --form-bg: #f4f6f8;
+  --form-fg: var(--ink);
+  --form-muted: #3c4654;
+  --field-border: #8e99a3;
+  --field-fg: var(--ink);
+  --form-button-bg: var(--ink);
+  --form-button-fg: var(--white);
+  --form-button-hover: #243140;
+  color-scheme: dark;
 }
 
 * { box-sizing: border-box; }
@@ -15,8 +66,8 @@ html { scroll-behavior: smooth; }
 
 body {
   margin: 0;
-  background: var(--white);
-  color: var(--ink);
+  background: var(--canvas);
+  color: var(--text);
   font-family: var(--font);
   font-size: 1rem;
   line-height: 1.55;
@@ -40,8 +91,8 @@ svg {
   position: absolute;
   left: 1rem;
   top: -4rem;
-  background: var(--ink);
-  color: var(--white);
+  background: var(--button-bg);
+  color: var(--button-fg);
   padding: 0.5rem 0.75rem;
 }
 
@@ -61,9 +112,11 @@ footer {
   top: 0;
   z-index: 4;
   min-height: 4.5rem;
-  background: rgb(255 255 255 / 0.94);
+  background: var(--header);
   border-bottom: 1px solid var(--line);
 }
+
+html[data-theme="dark"] .brand img { filter: invert(1); }
 
 .brand {
   display: flex;
@@ -99,25 +152,28 @@ button {
   gap: 0.4rem;
   min-height: 2.75rem;
   padding: 0 1.05rem;
-  border: 1px solid var(--ink);
+  border: 1px solid var(--button-border);
   border-radius: 999px;
-  background: var(--ink);
-  color: var(--white);
+  background: var(--button-bg);
+  color: var(--button-fg);
   text-decoration: none;
   font: inherit;
   font-weight: 600;
   cursor: pointer;
 }
 
-.action.ghost {
-  background: var(--white);
-  color: var(--ink);
+.action.ghost,
+.theme-toggle {
+  background: var(--ghost-bg);
+  color: var(--ghost-fg);
+  border-color: var(--ghost-border);
 }
 
 .action:hover,
-button:hover { background: #243140; }
+button:hover { background: var(--button-hover); }
 
-.action.ghost:hover { background: var(--paper); }
+.action.ghost:hover,
+.theme-toggle:hover { background: var(--ghost-hover); }
 
 .action:focus-visible,
 button:focus-visible,
@@ -126,8 +182,9 @@ select:focus-visible,
 textarea:focus-visible,
 nav a:focus-visible,
 .brand:focus-visible,
-.text-link:focus-visible {
-  outline: 2px solid var(--ink);
+.text-link:focus-visible,
+.whatsapp:focus-visible {
+  outline: 2px solid var(--focus);
   outline-offset: 3px;
 }
 
@@ -225,7 +282,7 @@ h1 {
   border: 1px solid var(--line);
   border-radius: 16px;
   background:
-    linear-gradient(160deg, rgb(255 255 255 / 0.2), rgb(255 255 255 / 0.92)),
+    var(--card-wash),
     url("assets/blueprint.png") right -2rem top -3rem / 220px no-repeat;
 }
 
@@ -318,16 +375,19 @@ h1 {
   padding: 1.6rem;
 }
 
-.contact-intro p:last-child { max-width: 22rem; color: var(--muted); }
+.contact-intro { color: #101820; }
+
+.contact-intro .eyebrow,
+.contact-intro p:last-child { max-width: 22rem; color: #3c4654; }
 
 .proposal {
   padding: 1.5rem;
   border-radius: 18px;
-  background: var(--ink);
-  color: var(--white);
+  background: var(--form-bg);
+  color: var(--form-fg);
 }
 
-.proposal > p { margin: 0.4rem 0 1.1rem; color: #d5dbe0; }
+.proposal > p { margin: 0.4rem 0 1.1rem; color: var(--form-muted); }
 
 .fields {
   display: grid;
@@ -343,10 +403,10 @@ input,
 select,
 textarea {
   width: 100%;
-  border: 1px solid rgb(255 255 255 / 0.28);
+  border: 1px solid var(--field-border);
   border-radius: 8px;
   background: transparent;
-  color: var(--white);
+  color: var(--field-fg);
   font: inherit;
   padding: 0.7rem 0.75rem;
 }
@@ -356,18 +416,41 @@ select option { color: var(--ink); }
 .proposal button {
   margin-top: 0.9rem;
   width: 100%;
-  background: var(--white);
-  color: var(--ink);
+  border-color: var(--form-button-bg);
+  background: var(--form-button-bg);
+  color: var(--form-button-fg);
 }
 
-.proposal button:hover { background: #e7ebef; }
+.proposal button:hover { background: var(--form-button-hover); }
 
 .armado {
   margin: 0.9rem 0 0;
   white-space: pre-wrap;
-  color: var(--white);
+  color: var(--form-fg);
   font-weight: 400;
 }
+
+.whatsapp {
+  position: fixed;
+  right: 1.25rem;
+  bottom: 1.25rem;
+  z-index: 6;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  min-height: 3rem;
+  padding: 0 1rem;
+  border-radius: 999px;
+  background: #128c7e;
+  color: var(--white);
+  text-decoration: none;
+  font-weight: 600;
+  box-shadow: 0 8px 24px rgb(16 24 32 / 0.18);
+}
+
+.whatsapp svg { stroke: none; fill: currentColor; }
+
+.whatsapp:hover { background: #0e6f64; }
 
 footer {
   justify-content: space-between;
@@ -386,6 +469,8 @@ footer p { margin: 0; color: var(--muted); font-size: 0.9rem; }
   .steps,
   .contact-grid,
   .section-head { grid-template-columns: 1fr; }
+
+  .bar { flex-wrap: wrap; row-gap: 0.5rem; }
 
   h1 { max-width: none; }
 
@@ -410,7 +495,7 @@ footer p { margin: 0; color: var(--muted); font-size: 0.9rem; }
     flex-direction: column;
     gap: 0;
     padding: 0.4rem 1.25rem 0.8rem;
-    background: var(--white);
+    background: var(--canvas);
     border-bottom: 1px solid var(--line);
   }
 
@@ -434,4 +519,7 @@ footer p { margin: 0; color: var(--muted); font-size: 0.9rem; }
   }
 
   footer nav { flex-wrap: wrap; }
+
+  .whatsapp span { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+  .whatsapp { padding: 0; width: 3rem; justify-content: center; }
 }

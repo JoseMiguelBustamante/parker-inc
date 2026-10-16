@@ -28,11 +28,17 @@ S5. "crea la repo en git"
 Scope: a Git repository on GitHub under JoseMiguelBustamante.
 Acceptance: origin points at that repository and main is pushed.
 
+S6. "Añade el modo oscuro manteniendo la integridad y la legibilidad porfa igual un botón de WhatsApp que se y rediriga a +591 78070058"
+Scope: a dark theme that keeps ink #101820 and white #ffffff readable, plus a WhatsApp control.
+Acceptance: the control opens https://wa.me/59178070058.
+Check: node --test
+
 ## Tasks
 
 - T1 | S1 S2 S3 | inline | green | layout from the supplied mockup, responsive. `node --test`: 3 pass. Previous commit 1c454056baab6cc29e8df20740d7b54b8ef01371.
 - T2 | S5 | inline | green | https://github.com/JoseMiguelBustamante/parker-inc main pushed
 - T3 | S4 | inline | green | https://parker.187.127.19.244.sslip.io returns 200 with the new layout. HTTP 301 to HTTPS. Certificate issuer Let's Encrypt, subject CN=parker.187.127.19.244.sslip.io. mark.png, logo.png, blueprint.png and styles.css return 200. Commit e2ca5ac46e5b09e40673deab069b9468bc096e92. Risk: item 5 (Dokploy redeploy and TLS domain update). No browser on this machine, so the form was not clicked.
+- T4 | S6 | inline | reopened | dark mode and WhatsApp button
 
 ## Log
 
@@ -41,3 +47,5 @@ L1 (2026-10-16): Créame un nuevo proyecto en proyect que sea una página donde 
 Palette measured from the logo file: ink about #101820, canvas white, blueprint slates #A8B0B8 and #E0E8E8. Logo crop x 76–434, y 1183–1528 of the source screenshot. Blueprint crop kept as the hero drawing.
 
 L2 (2026-10-16): Tengo estas mejores para el frontend requerda que es web y tiene que ser responsivo y el enlace que tengo el ssl como electrónica az
+
+L3 (2026-10-16): Añade el modo oscuro manteniendo la integridad y la legibilidad porfa igual un botón de WhatsApp que se y rediriga a +591 78070058
