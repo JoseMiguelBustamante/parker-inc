@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Parker Inc. — Landing pages, CRM y Freelancer</title>
+    <meta name="description" content="Parker Inc. Technology Group Enterprise ofrece landing pages, CRM y trabajo freelancer.">
+    <link rel="icon" href="assets/logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <a class="skip" href="#contenido">Saltar al contenido</a>
+    <header class="bar">
+      <a class="brand" href="#inicio">
+        <img src="assets/logo.png" alt="PARKER INC. Technology Group Enterprise" width="358" height="345">
+      </a>
+      <nav aria-label="Secciones">
+        <a href="#servicios">Servicios</a>
+        <a href="#metodo">Método</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+    </header>
+
+    <main id="contenido">
+      <section class="hero" id="inicio">
+        <div class="hero-copy">
+          <h1>La página, el seguimiento y quien lo construye.</h1>
+          <p>
+            Parker Inc. Technology Group Enterprise toma un encargo y lo deja
+            publicado. Tres servicios, un mismo plano: la landing que presenta
+            la oferta, el CRM que guarda el trato, y el freelancer que entra
+            al equipo para entregarlo.
+          </p>
+          <a class="action" href="#contacto">Pedir un alcance</a>
+        </div>
+        <figure class="plate">
+          <img src="assets/blueprint.png" alt="Plano geométrico en gris azulado, el dibujo de marca de Parker Inc." width="554" height="640">
+        </figure>
+      </section>
+
+      <section id="servicios" aria-labelledby="servicios-titulo">
+        <div class="section-head">
+          <h2 id="servicios-titulo">Servicios</h2>
+          <p>Cada uno se contrata solo o junto con los otros dos.</p>
+        </div>
+
+        <article class="service">
+          <h3>Landing pages</h3>
+          <div>
+            <p>
+              Una página para presentar una oferta y dejar un camino claro
+              para escribir. Campaña, lanzamiento o la cara pública de un
+              negocio: el visitante entiende qué se vende y qué sigue.
+            </p>
+            <p class="scope">Incluye estructura, texto, la marca que ya existe y la página publicada.</p>
+          </div>
+        </article>
+
+        <article class="service">
+          <h3>CRM</h3>
+          <div>
+            <p>
+              Un sistema para registrar personas, el estado de cada trato y
+              el siguiente paso. El seguimiento deja de depender de chats
+              sueltos y de memoria.
+            </p>
+            <p class="scope">Incluye contactos, pipeline y el registro de lo que ya se habló.</p>
+          </div>
+        </article>
+
+        <article class="service">
+          <h3>Freelancer</h3>
+          <div>
+            <p>
+              Un profesional que entra con un alcance, trabaja dentro del
+              equipo y entrega. No retiene el proyecto ni obliga a agrandar
+              el equipo fijo.
+            </p>
+            <p class="scope">Incluye un encargo definido, avance visible y la entrega acordada.</p>
+          </div>
+        </article>
+      </section>
+
+      <section id="metodo" aria-labelledby="metodo-titulo">
+        <div class="section-head">
+          <h2 id="metodo-titulo">Del pedido a la entrega</h2>
+          <p>El orden es el mismo para una landing, un CRM o un encargo freelance.</p>
+        </div>
+        <ol class="steps">
+          <li>
+            <h3>Alcance</h3>
+            <p>Qué se construye, para quién, y qué queda fuera de este encargo.</p>
+          </li>
+          <li>
+            <h3>Plano</h3>
+            <p>La estructura de la página, del CRM o del trabajo, antes de construir.</p>
+          </li>
+          <li>
+            <h3>Entrega</h3>
+            <p>El resultado publicado o instalado, con lo que hay que operar después.</p>
+          </li>
+        </ol>
+      </section>
+
+      <section id="contacto" aria-labelledby="contacto-titulo">
+        <div class="section-head">
+          <h2 id="contacto-titulo">Escribir a Parker Inc.</h2>
+          <p>Describa el servicio y el contexto. El mensaje queda armado en esta página para copiarlo.</p>
+        </div>
+        <form id="pedido">
+          <label>
+            Nombre
+            <input name="nombre" type="text" autocomplete="name" required maxlength="80">
+          </label>
+          <label>
+            Servicio
+            <select name="servicio" required>
+              <option value="Landing pages">Landing pages</option>
+              <option value="CRM">CRM</option>
+              <option value="Freelancer">Freelancer</option>
+            </select>
+          </label>
+          <label>
+            Mensaje
+            <textarea name="mensaje" required maxlength="800" rows="5"></textarea>
+          </label>
+          <button type="submit">Armar mensaje</button>
+          <p id="armado" class="armado" hidden></p>
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      <img src="assets/logo.png" alt="" width="358" height="345">
+      <p>Landing pages, CRM y Freelancer.</p>
+    </footer>
+
+    <script>
+      const form = document.querySelector("#pedido");
+      const out = document.querySelector("#armado");
+      form.addEventListener("submit", (event) => {
+        event.preventDefault();
+        const data = new FormData(form);
+        const text = [
+          "Parker Inc. Technology Group Enterprise",
+          "Nombre: " + data.get("nombre"),
+          "Servicio: " + data.get("servicio"),
+          "",
+          data.get("mensaje")
+        ].join("\n");
+        out.hidden = false;
+        out.textContent = text;
+        out.focus();
+      });
+    </script>
+  </body>
+</html>
