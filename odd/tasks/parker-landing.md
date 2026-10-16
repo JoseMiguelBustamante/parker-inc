@@ -32,7 +32,7 @@ Acceptance: origin points at that repository and main is pushed.
 
 - T1 | S1 S2 S3 | inline | green | layout from the supplied mockup, responsive. `node --test`: 3 pass. Previous commit 1c454056baab6cc29e8df20740d7b54b8ef01371.
 - T2 | S5 | inline | green | https://github.com/JoseMiguelBustamante/parker-inc main pushed
-- T3 | S4 | inline | reopened | HTTPS letsencrypt like Electrónica Central. Previous HTTP check was green. applicationId VE3gc1_jQCSF0c6q5_8iD. domainId SMwzSGCJ9op2te8v57GOa.
+- T3 | S4 | inline | green | https://parker.187.127.19.244.sslip.io returns 200 with the new layout. HTTP 301 to HTTPS. Certificate issuer Let's Encrypt, subject CN=parker.187.127.19.244.sslip.io. mark.png, logo.png, blueprint.png and styles.css return 200. Commit e2ca5ac46e5b09e40673deab069b9468bc096e92. Risk: item 5 (Dokploy redeploy and TLS domain update). No browser on this machine, so the form was not clicked.
 
 ## Log
 
