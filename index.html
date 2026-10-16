@@ -15,18 +15,27 @@
     <a class="skip" href="#contenido">Saltar al contenido</a>
     <header class="bar">
       <a class="brand" href="#inicio">
-        <img src="assets/logo.png" alt="PARKER INC. Technology Group Enterprise" width="358" height="345">
+        <img src="assets/mark.png" alt="" width="179" height="209">
+        <span>
+          <strong>PARKER INC.</strong>
+          <small>TECHNOLOGY GROUP</small>
+        </span>
       </a>
-      <nav aria-label="Secciones">
+      <input id="nav-toggle" class="nav-toggle" type="checkbox">
+      <label class="nav-label" for="nav-toggle">Menú</label>
+      <nav id="site-nav" aria-label="Secciones">
         <a href="#servicios">Servicios</a>
         <a href="#metodo">Método</a>
+        <a href="#nosotros">Nosotros</a>
         <a href="#contacto">Contacto</a>
       </nav>
+      <a class="action" href="#contacto">Pedir un alcance <span aria-hidden="true">→</span></a>
     </header>
 
     <main id="contenido">
       <section class="hero" id="inicio">
         <div class="hero-copy">
+          <p class="eyebrow">SOLUCIONES DIGITALES PARA NEGOCIOS</p>
           <h1>La página, el seguimiento y quien lo construye.</h1>
           <p>
             Parker Inc. Technology Group Enterprise toma un encargo y lo deja
@@ -34,7 +43,24 @@
             la oferta, el CRM que guarda el trato, y el freelancer que entra
             al equipo para entregarlo.
           </p>
-          <a class="action" href="#contacto">Pedir un alcance</a>
+          <div class="hero-actions">
+            <a class="action" href="#contacto">Pedir un alcance <span aria-hidden="true">→</span></a>
+            <a class="action ghost" href="#servicios">Conocer servicios</a>
+          </div>
+          <ul class="trust">
+            <li>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19V5M4 19h16M8 16v-5M12 16V8M16 16v-3"/></svg>
+              Enfoque en resultados
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 4-8 4-8-4 8-4zM4 12l8 4 8-4M4 17l8 4 8-4"/></svg>
+              Proceso claro y sin fricción
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 19v-1a3 3 0 0 0-3-3H7a3 3 0 0 0-3 3v1M10 12a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM20 19v-1a3 3 0 0 0-2.2-2.9M16 6.1a3 3 0 0 1 0 5.8"/></svg>
+              Talento especializado según el proyecto
+            </li>
+          </ul>
         </div>
         <figure class="plate">
           <img src="assets/blueprint.png" alt="Plano geométrico en gris azulado, el dibujo de marca de Parker Inc." width="554" height="640">
@@ -45,43 +71,52 @@
         <div class="section-head">
           <h2 id="servicios-titulo">Servicios</h2>
           <p>Cada uno se contrata solo o junto con los otros dos.</p>
+          <a class="text-link" href="#lista-servicios">Ver todos los detalles <span aria-hidden="true">→</span></a>
         </div>
-
-        <article class="service">
-          <h3>Landing pages</h3>
-          <div>
+        <div class="cards" id="lista-servicios">
+          <article class="card">
+            <div class="card-top">
+              <span>01</span>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h9l3 3v15H6V3zM15 3v3h3M8 11h8M8 15h5"/></svg>
+            </div>
+            <h3>Landing pages</h3>
             <p>
               Una página para presentar una oferta y dejar un camino claro
               para escribir. Campaña, lanzamiento o la cara pública de un
               negocio: el visitante entiende qué se vende y qué sigue.
             </p>
             <p class="scope">Incluye estructura, texto, la marca que ya existe y la página publicada.</p>
-          </div>
-        </article>
-
-        <article class="service">
-          <h3>CRM</h3>
-          <div>
+            <a class="text-link" href="#contacto" data-servicio="Landing pages">Conocer más <span aria-hidden="true">→</span></a>
+          </article>
+          <article class="card">
+            <div class="card-top">
+              <span>02</span>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3c4 0 7 1.2 7 3v12c0 1.8-3 3-7 3s-7-1.2-7-3V6c0-1.8 3-3 7-3zM5 6c0 1.8 3 3 7 3s7-1.2 7-3M5 12c0 1.8 3 3 7 3s7-1.2 7-3"/></svg>
+            </div>
+            <h3>CRM</h3>
             <p>
               Un sistema para registrar personas, el estado de cada trato y
               el siguiente paso. El seguimiento deja de depender de chats
               sueltos y de memoria.
             </p>
             <p class="scope">Incluye contactos, pipeline y el registro de lo que ya se habló.</p>
-          </div>
-        </article>
-
-        <article class="service">
-          <h3>Freelancer</h3>
-          <div>
+            <a class="text-link" href="#contacto" data-servicio="CRM">Conocer más <span aria-hidden="true">→</span></a>
+          </article>
+          <article class="card">
+            <div class="card-top">
+              <span>03</span>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 19v-1a3 3 0 0 0-3-3H8a3 3 0 0 0-3 3v1M10.5 12a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM20 19v-1a2.5 2.5 0 0 0-2-2.4M16.5 6.2a2.5 2.5 0 0 1 0 4.6"/></svg>
+            </div>
+            <h3>Freelancer</h3>
             <p>
               Un profesional que entra con un alcance, trabaja dentro del
               equipo y entrega. No retiene el proyecto ni obliga a agrandar
               el equipo fijo.
             </p>
             <p class="scope">Incluye un encargo definido, avance visible y la entrega acordada.</p>
-          </div>
-        </article>
+            <a class="text-link" href="#contacto" data-servicio="Freelancer">Conocer más <span aria-hidden="true">→</span></a>
+          </article>
+        </div>
       </section>
 
       <section id="metodo" aria-labelledby="metodo-titulo">
@@ -91,62 +126,118 @@
         </div>
         <ol class="steps">
           <li>
+            <span>01</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 4h8v3H8zM7 7h10v13H7zM10 12h4M10 16h4"/></svg>
             <h3>Alcance</h3>
             <p>Qué se construye, para quién, y qué queda fuera de este encargo.</p>
           </li>
           <li>
+            <span>02</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5h14v14H5zM9 9h6M9 13h6M9 17h3"/></svg>
             <h3>Plano</h3>
             <p>La estructura de la página, del CRM o del trabajo, antes de construir.</p>
           </li>
           <li>
+            <span>03</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12l16-7-5 16-3-6-8-3z"/></svg>
             <h3>Entrega</h3>
             <p>El resultado publicado o instalado, con lo que hay que operar después.</p>
           </li>
         </ol>
       </section>
 
-      <section id="contacto" aria-labelledby="contacto-titulo">
+      <section id="nosotros" aria-labelledby="nosotros-titulo">
         <div class="section-head">
-          <h2 id="contacto-titulo">Escribir a Parker Inc.</h2>
-          <p>Describa el servicio y el contexto. El mensaje queda armado en esta página para copiarlo.</p>
+          <h2 id="nosotros-titulo">Nosotros</h2>
+          <p>Technology Group Enterprise. El mismo criterio para la página, el seguimiento y quien lo construye.</p>
         </div>
-        <form id="pedido">
-          <label>
-            Nombre
-            <input name="nombre" type="text" autocomplete="name" required maxlength="80">
-          </label>
-          <label>
-            Servicio
-            <select name="servicio" required>
-              <option value="Landing pages">Landing pages</option>
-              <option value="CRM">CRM</option>
-              <option value="Freelancer">Freelancer</option>
-            </select>
-          </label>
-          <label>
-            Mensaje
-            <textarea name="mensaje" required maxlength="800" rows="5"></textarea>
-          </label>
-          <button type="submit">Armar mensaje</button>
-          <p id="armado" class="armado" hidden></p>
-        </form>
+        <p class="about">
+          Parker Inc. toma un encargo y lo deja publicado. No separamos la
+          cara pública del negocio, el registro de los tratos y el trabajo de
+          quien entra a hacerlo.
+        </p>
+      </section>
+
+      <section id="contacto" aria-labelledby="contacto-titulo">
+        <div class="contact-grid">
+          <div class="contact-intro">
+            <img src="assets/blueprint.png" alt="">
+            <div>
+              <p class="eyebrow">Contacto</p>
+              <h2 id="contacto-titulo">Escribir a Parker Inc.</h2>
+              <p>Describa el servicio y el contexto. El mensaje queda armado en esta página para copiarlo.</p>
+            </div>
+          </div>
+          <form id="pedido" class="proposal">
+            <h2>Solicitar una propuesta</h2>
+            <p>Cuéntenos qué necesita. Respondemos con un alcance claro.</p>
+            <div class="fields">
+              <label>
+                Nombre
+                <input name="nombre" type="text" autocomplete="name" required maxlength="80">
+              </label>
+              <label>
+                Correo electrónico
+                <input name="correo" type="email" autocomplete="email" required maxlength="120">
+              </label>
+              <label>
+                Empresa (opcional)
+                <input name="empresa" type="text" autocomplete="organization" maxlength="80">
+              </label>
+              <label>
+                Tipo de servicio
+                <select name="servicio" required>
+                  <option value="Landing pages">Landing pages</option>
+                  <option value="CRM">CRM</option>
+                  <option value="Freelancer">Freelancer</option>
+                </select>
+              </label>
+              <label class="wide">
+                Descripción del proyecto
+                <textarea name="mensaje" required maxlength="800" rows="4"></textarea>
+              </label>
+            </div>
+            <button type="submit">Enviar mensaje <span aria-hidden="true">→</span></button>
+            <p id="armado" class="armado" tabindex="-1" hidden></p>
+          </form>
+        </div>
       </section>
     </main>
 
     <footer>
-      <img src="assets/logo.png" alt="" width="358" height="345">
-      <p>Landing pages, CRM y Freelancer.</p>
+      <a class="brand" href="#inicio">
+        <img src="assets/mark.png" alt="" width="179" height="209">
+        <span>
+          <strong>PARKER INC.</strong>
+          <small>TECHNOLOGY GROUP</small>
+        </span>
+      </a>
+      <nav aria-label="Pie">
+        <a href="#servicios">Servicios</a>
+        <a href="#metodo">Método</a>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+      <p>© 2026 Parker Inc. Technology Group Enterprise.</p>
     </footer>
 
     <script>
       const form = document.querySelector("#pedido");
       const out = document.querySelector("#armado");
+      const service = form.querySelector("[name=servicio]");
+      document.querySelectorAll("[data-servicio]").forEach((link) => {
+        link.addEventListener("click", () => {
+          service.value = link.dataset.servicio;
+        });
+      });
       form.addEventListener("submit", (event) => {
         event.preventDefault();
         const data = new FormData(form);
         const text = [
           "Parker Inc. Technology Group Enterprise",
           "Nombre: " + data.get("nombre"),
+          "Correo: " + data.get("correo"),
+          "Empresa: " + (data.get("empresa") || "—"),
           "Servicio: " + data.get("servicio"),
           "",
           data.get("mensaje")
@@ -154,6 +245,11 @@
         out.hidden = false;
         out.textContent = text;
         out.focus();
+      });
+      document.querySelectorAll("#site-nav a").forEach((link) => {
+        link.addEventListener("click", () => {
+          document.querySelector("#nav-toggle").checked = false;
+        });
       });
     </script>
   </body>

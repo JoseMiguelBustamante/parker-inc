@@ -17,3 +17,11 @@ test("uses the supplied logo and its ink on a white canvas", () => {
   assert.match(css, /#101820/i);
   assert.match(css, /#ffffff/i);
 });
+
+test("matches the supplied layout and stays responsive", () => {
+  assert.match(page, /SOLUCIONES DIGITALES PARA NEGOCIOS/);
+  assert.match(page, /Nosotros/);
+  assert.match(page, /Solicitar una propuesta/);
+  assert.match(page, /name="viewport"/);
+  assert.match(css, /@media/);
+});
