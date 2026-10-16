@@ -38,7 +38,7 @@ Check: node --test
 - T1 | S1 S2 S3 | inline | green | layout from the supplied mockup, responsive. `node --test`: 3 pass. Previous commit 1c454056baab6cc29e8df20740d7b54b8ef01371.
 - T2 | S5 | inline | green | https://github.com/JoseMiguelBustamante/parker-inc main pushed
 - T3 | S4 | inline | green | https://parker.187.127.19.244.sslip.io returns 200 with the new layout. HTTP 301 to HTTPS. Certificate issuer Let's Encrypt, subject CN=parker.187.127.19.244.sslip.io. mark.png, logo.png, blueprint.png and styles.css return 200. Commit e2ca5ac46e5b09e40673deab069b9468bc096e92. Risk: item 5 (Dokploy redeploy and TLS domain update). No browser on this machine, so the form was not clicked.
-- T4 | S6 | inline | reopened | dark mode and WhatsApp button
+- T4 | S6 | inline | green | `node --test`: 4 pass. https://parker.187.127.19.244.sslip.io serves theme-toggle and https://wa.me/59178070058. Commit a25825fb03dc5f3700026061d24df3502d0bb8b8. Risk: item 5 (Dokploy redeploy). No browser, so the toggle and WhatsApp click were not exercised in a browser.
 
 ## Log
 
