@@ -162,8 +162,7 @@ button {
   cursor: pointer;
 }
 
-.action.ghost,
-.theme-toggle {
+.action.ghost {
   background: var(--ghost-bg);
   color: var(--ghost-fg);
   border-color: var(--ghost-border);
@@ -172,8 +171,56 @@ button {
 .action:hover,
 button:hover { background: var(--button-hover); }
 
-.action.ghost:hover,
-.theme-toggle:hover { background: var(--ghost-hover); }
+.action.ghost:hover { background: var(--ghost-hover); }
+
+button.theme-toggle {
+  position: relative;
+  width: 3.6rem;
+  height: 1.9rem;
+  min-height: 1.9rem;
+  padding: 0;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--paper);
+  color: var(--ink);
+}
+
+button.theme-toggle:hover { background: var(--paper); }
+
+.theme-knob {
+  position: absolute;
+  top: 0.15rem;
+  left: 0.15rem;
+  display: grid;
+  place-items: center;
+  width: 1.55rem;
+  height: 1.55rem;
+  border-radius: 50%;
+  background: var(--white);
+  color: var(--ink);
+  transition: transform 180ms ease;
+}
+
+html[data-theme="dark"] .theme-knob {
+  transform: translateX(1.65rem);
+  background: var(--ink);
+  color: var(--white);
+}
+
+.theme-knob svg {
+  width: 0.95rem;
+  height: 0.95rem;
+  stroke: currentColor;
+  fill: none;
+}
+
+.theme-knob .icon-moon { fill: currentColor; stroke: none; }
+
+.icon-moon { display: none; }
+
+html[data-theme="dark"] .icon-sun { display: none; }
+
+html[data-theme="dark"] .icon-moon { display: block; }
 
 .action:focus-visible,
 button:focus-visible,

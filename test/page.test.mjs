@@ -21,6 +21,9 @@ test("uses the supplied logo and its ink on a white canvas", () => {
 test("adds a readable dark mode and a WhatsApp link to +591 78070058", () => {
   assert.match(page, /id="theme-toggle"/);
   assert.match(page, /Modo oscuro/);
+  assert.match(page, /icon-sun/);
+  assert.match(page, /icon-moon/);
+  assert.match(css, /translateX/);
   assert.match(page, /https:\/\/wa\.me\/59178070058/);
   assert.match(css, /data-theme="dark"/);
   assert.match(css, /#101820/i);
